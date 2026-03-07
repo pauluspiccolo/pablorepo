@@ -19,7 +19,7 @@ public class UsuarioController{
 
      private List<Usuario> listaUsuarios = new ArrayList<>();
 
-    // 🔥 Constructor para llenar la lista al iniciar
+    // Constructor para llenar la lista al iniciar
     public UsuarioController() {
         listaUsuarios.add(new Usuario(1, "Pablo", "pauluspiccolo@yahho.com", 23));
         listaUsuarios.add(new Usuario(2, "Maria", "mariadenisse@hotmail.com", 55));
@@ -28,13 +28,13 @@ public class UsuarioController{
         listaUsuarios.add(new Usuario(5, "Luis", "Luiz0@hotmail.com", 27));
     }
 
-    // 1️⃣ GET - Obtener todos
+    // GET - Obtener todos
     @GetMapping
     public List<Usuario> listar() {
         return listaUsuarios;
     }
 
-    // 2️⃣ GET - Obtener por ID
+    // GET - Obtener por ID
     @GetMapping("/{id}")
     public Usuario obtener(@PathVariable int id) {
         return listaUsuarios.stream()
@@ -43,14 +43,14 @@ public class UsuarioController{
         .orElse(null);
     }
 
-    // 3️⃣ POST - Crear usuario
+    // 3 POST - Crear usuario
     @PostMapping
     public Usuario crear(@RequestBody Usuario usuario) {
         listaUsuarios.add(usuario);
         return usuario;
     }
 
-    // 4️⃣ PUT - Actualizar usuario
+    // PUT - Actualizar usuario
     @PutMapping("/{id}")
     public Usuario actualizar(@PathVariable Long id, @RequestBody Usuario usuarioActualizado) {
         for (Usuario u : listaUsuarios) {
@@ -62,7 +62,7 @@ public class UsuarioController{
         return null;
     }
 
-    // 5️⃣ DELETE - Eliminar usuario
+    // DELETE - Eliminar usuario
     @DeleteMapping("/{id}")
     public String eliminar(@PathVariable Long id) {
         listaUsuarios.removeIf(u -> u.getId()==id);
