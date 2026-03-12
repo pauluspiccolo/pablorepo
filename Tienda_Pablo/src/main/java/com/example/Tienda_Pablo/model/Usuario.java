@@ -10,11 +10,11 @@ public class Usuario {
     private String correo;
     private int edad;
 
-    // 🔹 Constructor vacío (OBLIGATORIO para Spring)
+    
     public Usuario() {
     }
 
-    // 🔹 Constructor con parámetros
+    
     public Usuario(int id, String nombre, String correo, int edad) {
         this.id = id;
         this.nombre = nombre;
@@ -22,7 +22,7 @@ public class Usuario {
         this.edad = edad;
     }
 
-    // 🔹 Getters y Setters
+    
     public int getId() {
         return id;
     }
